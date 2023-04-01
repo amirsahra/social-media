@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use Database\Seeders\ActionClasses\UserAction;
+use Database\Seeders\ActionClasses\User\UserAction;
 use Illuminate\Database\Seeder;
 
 class UserSeeder extends Seeder

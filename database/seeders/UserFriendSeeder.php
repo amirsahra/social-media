@@ -2,8 +2,7 @@
 
 namespace Database\Seeders;
 
-use Database\Seeders\ActionClasses\FriendAction;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Database\Seeders\ActionClasses\User\FriendAction;
 use Illuminate\Database\Seeder;
 
 class UserFriendSeeder extends Seeder

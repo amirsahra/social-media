@@ -4,10 +4,12 @@ namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Jenssegers\Mongodb\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Jenssegers\Mongodb\Relations\EmbedsMany;
 use Jenssegers\Mongodb\Relations\EmbedsOne;
+use Jenssegers\Mongodb\Relations\HasMany;
 use Laravel\Sanctum\HasApiTokens;
 use Jenssegers\Mongodb\Eloquent\HybridRelations;
 
@@ -55,5 +57,10 @@ class User extends Authenticatable
     public function friends(): EmbedsMany
     {
         return $this->embedsMany(Friend::class);
+    }
+
+    public function posts(): HasMany
+    {
+        return $this->hasMany(Post::class);
     }
 }

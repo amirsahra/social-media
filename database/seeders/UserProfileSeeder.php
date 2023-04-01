@@ -3,11 +3,10 @@
 namespace Database\Seeders;
 
 use App\Models\User;
-use Database\Seeders\ActionClasses\EducationAction;
-use Database\Seeders\ActionClasses\LocationAction;
-use Database\Seeders\ActionClasses\ProfileAction;
-use Database\Seeders\ActionClasses\SkillAction;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Database\Seeders\ActionClasses\User\EducationAction;
+use Database\Seeders\ActionClasses\User\LocationAction;
+use Database\Seeders\ActionClasses\User\ProfileAction;
+use Database\Seeders\ActionClasses\User\SkillAction;
 use Illuminate\Database\Seeder;
 
 class UserProfileSeeder extends Seeder

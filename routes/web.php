@@ -42,12 +42,8 @@ Route::get('/t', function () {
     //$ActionClasses =User::where('username','amir')->first();
     //$ActionClasses = User::first();
 
-    $users = User::all();
-    $friendCount = rand(10,count($users));
-    $u= User::all(['username','profile.avatar'])
-        //->where('username','<>', $user->username)
-        ->random($friendCount);
-
-    dd($u);
+    $user = User::all('_id')->find('642850a44b038ba5ec0cb9c6');
+    $post = \App\Models\Post::all();
+    dd($user->posts());
     // return view('welcome');
 });

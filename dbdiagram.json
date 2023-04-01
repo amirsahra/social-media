@@ -39,7 +39,6 @@
         "body": "String",
         "image": "String",
         "video": "String",
-        "author": "username",
         "status": "enum('...')",
         "comments": {
             "_id": "ObjectId",
