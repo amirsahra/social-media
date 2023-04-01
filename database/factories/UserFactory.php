@@ -2,7 +2,9 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
 /**
@@ -17,12 +19,38 @@ class UserFactory extends Factory
      */
     public function definition()
     {
+        $gender = $this->faker->randomElement(['male', 'female']);
         return [
-            'name' => $this->faker->name(),
+            'username' => $this->faker->name(),
             'email' => $this->faker->unique()->safeEmail(),
             'email_verified_at' => now(),
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'password' => Hash::make('123456789'),
             'remember_token' => Str::random(10),
+            /*'profile' => [
+                'first_name' => $this->faker->firstName($gender),
+                'last_name' => $this->faker->lastName(),
+                'gender' => $gender,
+                'birthday' => $this->faker->dateTimeBetween('1990-01-01', '2013-01-01')
+                    ->format('d/m/Y'),
+                'avatar' => 'image/avatars/ActionClasses.png',
+                'banner' => 'image/avatars/banner.png',
+                'bio' => $this->faker->text(),
+                'education' => [
+                    'degree' => $this->faker
+                        ->randomElement(['Associate', 'Bachelor’s', 'Master’s', 'Doctoral']),
+                    'name' => '',
+                    'country' => $this->faker->country(),
+                    'city' => ''
+                ],
+                'skills' => [
+                    'title' => $this->faker->jobTitle()
+                ],
+                'location' => [
+                    'country' => $this->faker->country(),
+                    'city' => $this->faker->city(),
+                    'address' => ''
+                ]
+            ],*/
         ];
     }
 

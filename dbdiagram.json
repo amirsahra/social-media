@@ -1,0 +1,96 @@
+{
+    "users": {
+        "_id": "ObjectId",
+        "username": "String",
+        "email": "String",
+        "password": "String",
+        "profile": {
+            "first_name": "String",
+            "last_name": "String",
+            "gender": "enum",
+            "birthday": "date",
+            "avatar": "string",
+            "banner": "string",
+            "bio": "String",
+            "educations": {
+                "_id": "ObjectId",
+                "degree": "string",
+                "title": "string"
+            },
+            "skills": {
+                "title": "string"
+            },
+            "location": {
+                "country": "string",
+                "city": "string",
+                "address": "string"
+            }
+        },
+        "friends": {
+            "username": "string",
+            "avatar": "string"
+        }
+    },
+    "posts": {
+        "_id": "ObjectId",
+        "user_id": "ObjectId",
+        "title": "String",
+        "type": "enum('text','image','video')",
+        "body": "String",
+        "image": "String",
+        "video": "String",
+        "author": "username",
+        "status": "enum('...')",
+        "comments": {
+            "_id": "ObjectId",
+            "text": "String",
+            "status": "enum('...')",
+            "reply": {
+                "_id": "ObjectId",
+                "text": "String",
+                "status": "enum('...')",
+                "reply": "username",
+                "author": {
+                    "username": "string",
+                    "avatar": "string"
+                },
+                "likes": {
+                    "username": "string",
+                    "avatar": "string"
+                },
+                "createdAt": "Date",
+                "updatedAt": "Date"
+            },
+            "author": {
+                "username": "string",
+                "avatar": "string"
+            },
+            "likes": {
+                "username": "string",
+                "avatar": "string"
+            },
+            "createdAt": "Date",
+            "updatedAt": "Date"
+        },
+        "likes": {
+            "username": "string",
+            "avatar": "string"
+        },
+        "createdAt": "Date",
+        "updatedAt": "Date"
+    },
+    "chats": {
+        "_id": "ObjectId",
+        "receivers": {
+            "sender": "username",
+            "recipient": "username"
+        },
+        "messages": {
+            "_id": "ObjectId",
+            "sender": "username",
+            "recipient": "username",
+            "content": "sting",
+            "datetime": "timestamp"
+        }
+    }
+}
