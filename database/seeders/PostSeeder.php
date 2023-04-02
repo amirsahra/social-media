@@ -10,10 +10,8 @@ class PostSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
-     * @return void
      */
-    public function run(PostAction $postAction)
+    public function run(PostAction $postAction): void
     {
         for ($i = 0; $i < 50; $i++)
             $postAction();
