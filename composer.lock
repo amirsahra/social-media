@@ -4,8 +4,45 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bea7ed7bc490d660b4d7810772afb203",
+    "content-hash": "9723f13b67529b401194531ad6c95f30",
     "packages": [
+        {
+            "name": "amirsahra/illustrator",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/amirsahra/illustrator.git",
+                "reference": "a0025adaf63ebab8cab3aa9d93fe543ecce3f2bd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/amirsahra/illustrator/zipball/a0025adaf63ebab8cab3aa9d93fe543ecce3f2bd",
+                "reference": "a0025adaf63ebab8cab3aa9d93fe543ecce3f2bd",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Amirsahra\\Illustrator\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "amirsahra",
+                    "email": "amirhosein.sahra@gmail.com"
+                }
+            ],
+            "description": "Easy management of image addition and update",
+            "support": {
+                "issues": "https://github.com/amirsahra/illustrator/issues",
+                "source": "https://github.com/amirsahra/illustrator/tree/v1.0.2"
+            },
+            "time": "2023-02-14T13:44:32+00:00"
+        },
         {
             "name": "asm89/stack-cors",
             "version": "v2.1.1",
