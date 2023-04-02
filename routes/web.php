@@ -1,7 +1,9 @@
 <?php
 
+use Amirsahra\Illustrator\Facade\Illustrator;
 use App\Models\Profile;
 use App\Models\User;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,27 +18,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-
-    /*$ActionClasses = User::create([
-        'username' => 'amir',
-        'email' => 'amir@example.com',
-        'profile' => [
-            'first_name' => 'amir hossein',
-            'last_name' => 'sahranavard',
-        ],
-    ]);*/
-
-    $user = new User();
-    $user->username = 'amir';
-    $user->email = 'john@example.com';
-
-    $profile = new Profile();
-    $profile->first_name = 'qaz';
-    $profile->last_name = 'male';
-    $user->save();
-    $user->profile()->save($profile);
-    dd($user);
+    return view('welcome');
 });
+
+Route::post('/upload',function (\Illuminate\Http\Request $request){
+    Illustrator::upload($request->imageInput);
+
+    return Redirect::back()->with(['msg' => 'successfully']);
+})->name('uploadImage');
 
 Route::get('/t', function () {
     //$ActionClasses =User::where('username','amir')->first();

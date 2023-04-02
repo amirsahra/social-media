@@ -36,8 +36,8 @@ return [
     |
     */
     'image_path' => [
-        // Default directory to save images
-        'dir' => 'images',
+        // Default directory to save image
+        'dir' => 'image',
 
         /*
         |--------------------------------------------------------------------------
