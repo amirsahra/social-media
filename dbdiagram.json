@@ -45,9 +45,8 @@
             "content": "String",
             "reply": {
                 "_id": "ObjectId",
-                "text": "String",
-                "status": "enum('...')",
-                "reply": "username",
+                "content": "String",
+                "mention": "username",
                 "author": {
                     "username": "string",
                     "avatar": "string"
