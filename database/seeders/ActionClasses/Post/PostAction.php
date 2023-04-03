@@ -10,8 +10,9 @@ class PostAction
     public function __invoke(): void
     {
         $postType = fake()->randomElement(['text', 'image', 'video']);
+        $randomUser= User::all('_id')->random(1)->toArray();
         $post = new Post();
-        $post->user_id = User::all('_id')->random(1)->first()->id;
+        $post->user_id = $randomUser[0]['_id'];
         $post->title = fake()->title;
         $post->type = $postType;
         $post->body = fake()->realText();

@@ -34,7 +34,7 @@ Route::get('/t', function () {
     $user = User::all('_id')->find('642850a44b038ba5ec0cb9c6');
     $post = \App\Models\Post::all();
     $u =User::all(['username', 'profile.avatar'])
-        ->random()->first();
-    dd($u->profile->avatar);
+        ->random(1)->toArray();
+    dd($u);
     // return view('welcome');
 });

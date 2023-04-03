@@ -4,17 +4,17 @@ namespace Database\Seeders\ActionClasses\Post\Comment;
 
 use App\Models\Author;
 use App\Models\Comment;
-use App\Models\User;
+use Database\Seeders\ActionClasses\RandomUserAction;
 
 class AuthorAction
 {
     public function __construct(Comment $comment)
     {
         $author = new Author();
-        $randomAuthor = User::all(['username', 'profile.avatar'])
-            ->random()->first();
-        $author->username = $randomAuthor->username;
-        $author->avatar = $randomAuthor->profile->avatar;
+        $randomUser = new RandomUserAction();
+        $randomAuthor = $randomUser();
+        $author->username = $randomAuthor['username'];
+        $author->avatar = $randomAuthor['avatar'];
         $comment->author()->save($author);
     }
 }
