@@ -42,8 +42,7 @@
         "status": "enum('...')",
         "comments": {
             "_id": "ObjectId",
-            "text": "String",
-            "status": "enum('...')",
+            "content": "String",
             "reply": {
                 "_id": "ObjectId",
                 "text": "String",

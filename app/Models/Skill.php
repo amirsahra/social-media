@@ -9,7 +9,7 @@ class Skill extends Model
 {
     use HasFactory;
 
-    protected $hidden = [
+    protected $fillable = [
         'title',
     ];
 

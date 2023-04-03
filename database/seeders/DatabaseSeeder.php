@@ -20,7 +20,8 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             UserProfileSeeder::class,
             UserFriendSeeder::class,
-            PostSeeder::class
+            PostSeeder::class,
+            PostCommentSeeder::class
         ]);
     }
 }
