@@ -28,7 +28,7 @@ Route::post('/upload',function (\Illuminate\Http\Request $request){
 })->name('uploadImage');
 
 Route::get('/t', function () {
-   dd(\Illuminate\Support\Facades\Response::apiResult('hi'));
+  dd(\Illuminate\Support\Facades\Response::apiResult());
        //->data(['amir'=>'sahra'])
        //->build());
 });
