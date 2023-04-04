@@ -18,7 +18,8 @@ return new class extends Migration
             $collection->string('username');
             $collection->string('email')->unique();
             $collection->timestamp('email_verified_at')->nullable();
-            $collection->embedsOne('ProfileAction');
+            $collection->embedsOne('profile');
+            $collection->embedMany('friends');
             $collection->timestamps();
 
         });

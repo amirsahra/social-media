@@ -39,17 +39,14 @@
         "body": "String",
         "image": "String",
         "video": "String",
-        "author": "username",
         "status": "enum('...')",
         "comments": {
             "_id": "ObjectId",
-            "text": "String",
-            "status": "enum('...')",
+            "content": "String",
             "reply": {
                 "_id": "ObjectId",
-                "text": "String",
-                "status": "enum('...')",
-                "reply": "username",
+                "content": "String",
+                "mention": "username",
                 "author": {
                     "username": "string",
                     "avatar": "string"

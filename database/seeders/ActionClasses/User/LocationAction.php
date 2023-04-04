@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Seeders\ActionClasses;
+namespace Database\Seeders\ActionClasses\User;
 
 use App\Models\Location;
 use App\Models\Profile;

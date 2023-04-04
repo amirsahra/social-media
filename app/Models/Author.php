@@ -5,12 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Jenssegers\Mongodb\Eloquent\Model;
 
-class Skill extends Model
+
+class Author extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'title',
-    ];
-
+    protected $fillable = ['username','password'];
 }

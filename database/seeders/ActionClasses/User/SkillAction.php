@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Seeders\ActionClasses;
+namespace Database\Seeders\ActionClasses\User;
 
 use App\Models\Profile;
 use App\Models\Skill;

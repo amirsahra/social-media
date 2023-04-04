@@ -168,6 +168,7 @@ return [
          * Package Service Providers...
          */
         Jenssegers\Mongodb\MongodbServiceProvider::class,
+        Amirsahra\Illustrator\IllustratorServiceProvider::class,
         /*
          * Application Service Providers...
          */
