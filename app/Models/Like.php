@@ -11,5 +11,4 @@ class Like extends Model
 
     protected $fillable = ['username', 'avatar'];
 
-
 }

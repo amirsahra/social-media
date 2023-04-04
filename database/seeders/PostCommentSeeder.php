@@ -7,6 +7,7 @@ use Database\Seeders\ActionClasses\Post\Comment\AuthorAction;
 use Database\Seeders\ActionClasses\Post\Comment\CommentAction;
 use Database\Seeders\ActionClasses\Post\Comment\LikeAction;
 use Database\Seeders\ActionClasses\Post\Comment\ReplyAction;
+use Database\Seeders\ActionClasses\Post\Comment\ReplyAuthorAction;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -35,6 +36,7 @@ class PostCommentSeeder extends Seeder
                 for ($j = 0; $j < $countReply; $j++) {
                     $replyAction = new ReplyAction();
                     $reply = $replyAction($comment);
+                    new ReplyAuthorAction($reply);
                 }
                 // author
                 new AuthorAction($comment);
