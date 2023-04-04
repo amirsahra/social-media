@@ -169,6 +169,7 @@ return [
          */
         Jenssegers\Mongodb\MongodbServiceProvider::class,
         Amirsahra\Illustrator\IllustratorServiceProvider::class,
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         /*
          * Application Service Providers...
          */
