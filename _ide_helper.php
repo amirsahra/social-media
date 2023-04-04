@@ -12865,6 +12865,20 @@
         {
                         \Illuminate\Routing\ResponseFactory::flushMacros();
         }
+                    /**
+         * 
+         *
+         * @see \App\Providers\AppServiceProvider::boot()
+         * @param string $message
+         * @param array|null $data
+         * @param bool $success
+         * @param int $status
+         * @static 
+         */ 
+        public static function apiResult($message, $data = null, $success = true, $status = 200)
+        {
+                        return \Illuminate\Routing\ResponseFactory::apiResult($message, $data, $success, $status);
+        }
          
     }
             /**
@@ -18194,6 +18208,31 @@
         public static function hasValidSignatureWhileIgnoring($ignoreQuery = [], $absolute = true)
         {
                         return \Illuminate\Http\Request::hasValidSignatureWhileIgnoring($ignoreQuery, $absolute);
+        }
+         
+    }
+     
+}
+
+    namespace Illuminate\Routing { 
+            /**
+     * 
+     *
+     */ 
+        class ResponseFactory {
+                    /**
+         * 
+         *
+         * @see \App\Providers\AppServiceProvider::boot()
+         * @param string $message
+         * @param array|null $data
+         * @param bool $success
+         * @param int $status
+         * @static 
+         */ 
+        public static function apiResult($message, $data = null, $success = true, $status = 200)
+        {
+                        return \Illuminate\Routing\ResponseFactory::apiResult($message, $data, $success, $status);
         }
          
     }

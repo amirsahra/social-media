@@ -28,13 +28,7 @@ Route::post('/upload',function (\Illuminate\Http\Request $request){
 })->name('uploadImage');
 
 Route::get('/t', function () {
-    //$ActionClasses =User::where('username','amir')->first();
-    //$ActionClasses = User::first();
-
-    $user = User::all('_id')->find('642850a44b038ba5ec0cb9c6');
-    $post = \App\Models\Post::all();
-    $u =User::all(['username', 'profile.avatar'])
-        ->random(1)->toArray();
-    dd($u);
-    // return view('welcome');
+   dd(\Illuminate\Support\Facades\Response::apiResult('hi'));
+       //->data(['amir'=>'sahra'])
+       //->build());
 });
