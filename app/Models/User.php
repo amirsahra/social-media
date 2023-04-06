@@ -2,20 +2,23 @@
 
 namespace App\Models;
 
+use Illuminate\Auth\Authenticatable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Jenssegers\Mongodb\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Jenssegers\Mongodb\Relations\EmbedsMany;
 use Jenssegers\Mongodb\Relations\EmbedsOne;
 use Jenssegers\Mongodb\Relations\HasMany;
 use Laravel\Sanctum\HasApiTokens;
 use Jenssegers\Mongodb\Eloquent\HybridRelations;
+use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticateContract;
 
-class User extends Authenticatable
+
+class User extends Eloquent implements AuthenticateContract
 {
     use HasApiTokens, HasFactory, Notifiable;
-    use HybridRelations;
+    use HybridRelations,Authenticatable;
 
     /**
      * The attributes that are mass assignable.

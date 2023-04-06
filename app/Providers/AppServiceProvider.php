@@ -2,9 +2,11 @@
 
 namespace App\Providers;
 
+use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\ServiceProvider;
-
+use Laravel\Sanctum\PersonalAccessToken;
+use App\Models\PersonalAccessToken as SanctumPersonalAccessToken;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -27,6 +29,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        // Loader Alias
+        $loader = AliasLoader::getInstance();
+        // SANCTUM CUSTOM PERSONAL-ACCESS-TOKEN
+        $loader->alias(PersonalAccessToken::class, SanctumPersonalAccessToken::class);
+
+
         // api result
         Response::macro('apiResult', function (
             string $message, array $data = null, bool $success = true, int $status = 200
