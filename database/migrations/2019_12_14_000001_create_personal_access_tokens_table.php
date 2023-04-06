@@ -2,34 +2,30 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+    use DatabaseMigrations;
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
-        Schema::create('personal_access_tokens', function (Blueprint $table) {
-            $table->id();
-            $table->morphs('tokenable');
-            $table->string('name');
-            $table->string('token', 64)->unique();
-            $table->text('abilities')->nullable();
-            $table->timestamp('last_used_at')->nullable();
-            $table->timestamps();
+        Schema::connection('mongodb')->create('personal_access_tokens', function (Blueprint $collection) {
+            $collection->index('user_id');
+            $collection->string('token', 80)->unique();
+            $collection->text('abilities')->nullable();
+            $collection->timestamp('last_used_at')->nullable();
         });
+
     }
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('personal_access_tokens');
     }

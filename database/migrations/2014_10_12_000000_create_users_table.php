@@ -1,11 +1,13 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Jenssegers\Mongodb\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+    use DatabaseMigrations;
     /**
      * Run the migrations.
      *
