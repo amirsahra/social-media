@@ -17,8 +17,7 @@ use Illuminate\Contracts\Auth\Authenticatable as AuthenticateContract;
 
 class User extends Eloquent implements AuthenticateContract
 {
-    use HasApiTokens, HasFactory, Notifiable;
-    use HybridRelations,Authenticatable;
+    use HasApiTokens, HasFactory, Notifiable, HybridRelations, Authenticatable;
 
     /**
      * The attributes that are mass assignable.

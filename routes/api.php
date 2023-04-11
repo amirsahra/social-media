@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\V1\Auth\LoginController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -18,4 +19,9 @@ Route::middleware('auth:sanctum')->get('/ActionClasses', function (Request $requ
     return $request->user();
 });
 
-Route::post('login',[\App\Http\Controllers\V1\Auth\LoginController::class,'login']);
+Route::group(['prefix'=>'','name'=>'','middleware'=>'auth:sanctum'],function (){
+    Route::post('logout',[LoginController::class,'logout']);
+});
+
+Route::post('login',[LoginController::class,'login']);
+
