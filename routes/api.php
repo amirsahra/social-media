@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\V1\Auth\LoginController;
+use App\Http\Controllers\V1\Auth\RegisterController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -24,4 +25,5 @@ Route::group(['prefix'=>'','name'=>'','middleware'=>'auth:sanctum'],function (){
 });
 
 Route::post('login',[LoginController::class,'login']);
+Route::post('register',[RegisterController::class,'register']);
 

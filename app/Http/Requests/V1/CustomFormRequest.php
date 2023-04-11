@@ -2,10 +2,11 @@
 
 namespace App\Http\Requests\V1;
 use Illuminate\Contracts\Validation\Validator;
+use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Support\Facades\Response;
 
-class CustomFormRequest
+class CustomFormRequest extends FormRequest
 {
     protected function failedValidation(Validator $validator): mixed
     {
