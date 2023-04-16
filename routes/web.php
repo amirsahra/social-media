@@ -28,7 +28,10 @@ Route::post('/upload',function (\Illuminate\Http\Request $request){
 })->name('uploadImage');
 
 Route::get('/t', function () {
-  //dd(\Illuminate\Support\Facades\Response::apiResult());
-       //->data(['amir'=>'sahra'])
-       //->build());
+    $data = array('name'=>"Virat Gandhi");
+    Mail::send(['text'=>'mail'], $data, function($message) {
+        $message->to('abc@gmail.com', 'Tutorials Point')->subject
+        ('Laravel Basic Testing Mail');
+        $message->from('xyz@gmail.com','Virat Gandhi');
+    });
 });

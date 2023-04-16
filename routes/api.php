@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\V1\Auth\ForgotPasswordController;
 use App\Http\Controllers\V1\Auth\LoginController;
 use App\Http\Controllers\V1\Auth\RegisterController;
 use Illuminate\Http\Request;
@@ -26,4 +27,9 @@ Route::group(['prefix'=>'','name'=>'','middleware'=>'auth:sanctum'],function (){
 
 Route::post('login',[LoginController::class,'login']);
 Route::post('register',[RegisterController::class,'register']);
+
+Route::group(['prefix'=>'password/','as'=>'password.'],function (){
+    Route::post('forgot',ForgotPasswordController::class)->name('forgot');
+    Route::post('reset',ForgotPasswordController::class)->name('reset');
+});
 
