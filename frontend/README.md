@@ -1,4 +1,4 @@
-# social-media
+# my-project
 
 ## Project setup
 ```
